@@ -4,6 +4,7 @@
   "description": "REST API for Octopus Waterfall Management",
   "main": "index.js",
   "scripts": {
+    "start": "node index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
