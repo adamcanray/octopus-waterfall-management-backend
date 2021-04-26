@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true});
 var db = mongoose.connection;
 // Configure cors
-app.use(cors())
+app.use(cors({credentials: true, origin: true}))
 
 // Added check for DB connection
 if(!db)
