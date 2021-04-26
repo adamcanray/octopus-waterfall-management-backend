@@ -8,6 +8,9 @@ var agentSchema = mongoose.Schema({
     agent_location: {
       type: String,
     },
+    agent_location_permission: {
+      type: String,
+    },
     agent_ip: {
       type: String,
     },
