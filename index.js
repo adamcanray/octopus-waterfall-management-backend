@@ -19,6 +19,7 @@ let apiRoutes = require("./api-routes");
 //     extended: true
 // }));
 // app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 // Connect to Mongoose and set connection variable
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true});
