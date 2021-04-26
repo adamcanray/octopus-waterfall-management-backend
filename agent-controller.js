@@ -47,10 +47,8 @@ exports.update = function (req, res) {
 Agent.findById(req.params.contact_id, function (err, agent) {
         if (err)
             res.send(err);
-agent.name = req.body.name ? req.body.name : agent.name;
-        agent.gender = req.body.gender;
-        agent.email = req.body.email;
-        agent.phone = req.body.phone;
+            agent.agent_info = req.body.agent_info ? req.body.agent_info : agent.agent_info;
+    agent.agent_location = req.body.agent_location;
 // save the agent and check for errors
         agent.save(function (err) {
             if (err)
@@ -65,7 +63,7 @@ agent.name = req.body.name ? req.body.name : agent.name;
 // Handle delete agent
 exports.delete = function (req, res) {
     Agent.remove({
-        _id: req.params.contact_id
+        _id: req.params.agent_id
     }, function (err, agent) {
         if (err)
             res.send(err);
