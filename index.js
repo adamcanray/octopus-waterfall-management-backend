@@ -6,6 +6,8 @@ let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 // Initialise the app
 let app = express();
+// cors
+let cors = require('cors')
 // dotenv
 require('dotenv').config()
 
@@ -19,6 +21,8 @@ app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true});
 var db = mongoose.connection;
+// Configure cors
+app.use(cors())
 
 // Added check for DB connection
 if(!db)
