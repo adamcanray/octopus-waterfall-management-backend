@@ -4,12 +4,13 @@ let express = require('express');
 let bodyParser = require('body-parser');
 // Import Mongoose
 let mongoose = require('mongoose');
-// Initialise the app
-let app = express();
 // cors
 let cors = require('cors')
 // dotenv
 require('dotenv').config()
+
+// Initialise the app
+let app = express();
 
 // Import routes
 let apiRoutes = require("./api-routes");
