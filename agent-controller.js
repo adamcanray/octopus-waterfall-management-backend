@@ -22,7 +22,7 @@ exports.new = function (req, res) {
     agent.agent_info = req.body.agent_info ? req.body.agent_info : agent.agent_info;
     agent.agent_location = req.body.agent_location;
     agent.agent_location_permission = req.body.agent_location_permission;
-    agent.agent_ip = req.body.agent_ip;
+    agent.agent_ip = req.ip;
 // save the agent and check for errors
     agent.save(function (err) {
         // if (err)
@@ -52,7 +52,7 @@ Agent.findById(req.params.contact_id, function (err, agent) {
             agent.agent_info = req.body.agent_info ? req.body.agent_info : agent.agent_info;
     agent.agent_location = req.body.agent_location;
     agent.agent_location_permission = req.body.agent_location_permission;
-    agent.agent_ip = req.body.agent_ip;
+    agent.agent_ip = req.ip;
 // save the agent and check for errors
         agent.save(function (err) {
             if (err)
