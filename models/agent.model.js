@@ -1,6 +1,6 @@
-var mongoose = require('mongoose');
-// Setup schema
-var agentSchema = mongoose.Schema({
+let mongoose = require('mongoose')
+
+let AgentSchema = mongoose.Schema({
     agent_info: {
         type: String,
         required: true
@@ -18,9 +18,6 @@ var agentSchema = mongoose.Schema({
         type: Date,
         default: Date.now
     }
-});
-// Export Agent model
-var Agent = module.exports = mongoose.model('agent', agentSchema);
-module.exports.get = function (callback, limit) {
-    Agent.find(callback).limit(limit);
-}
+})
+
+let Agent  = module.exports = mongoose.model('agent', AgentSchema)
