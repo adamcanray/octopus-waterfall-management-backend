@@ -15,7 +15,10 @@ class AgentList extends API {
         data,
       })
     } catch (err) {
-      throw err
+      return res.status(400).json({
+        status: "error",
+        message: err.message
+      })
     }
   }
 }
