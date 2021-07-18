@@ -4,6 +4,7 @@ const AdminSchema = mongoose.Schema({
   username: {
     type: String,
     required: true,
+    unique: true,
   },
   first_name: {
     type: String,
@@ -23,4 +24,6 @@ const AdminSchema = mongoose.Schema({
   }
 })
 
-const Admin = module.exports = mongoose.model('admin', AdminSchema)
+const Admin = mongoose.model('admin', AdminSchema)
+Admin.createIndexes()
+module.exports = Admin
